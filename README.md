@@ -1,6 +1,6 @@
-# bookmarks.txt
+# bookmarks
 
-bookmarks.txt is a concept of keeping bookmarks in plain text files.
+bookmarks is a concept of keeping bookmarks in plain text files.
 
 ## Principals
 
