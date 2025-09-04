@@ -22,7 +22,7 @@ title=${2:-}
 
 if [ -n "$url" ]
 then
-        echo "$url $title" >> bookmarks.txt
+        echo "$url $title" >> "$HOME/bookmarks/bookmarks.txt"
 else
         bookmarks_file="$HOME/bookmarks/bookmarks.txt"
 
