@@ -7,7 +7,7 @@
 #
 # Usage:
 #
-#   # Print content of `bookmarks.txt` files stored in $HOME and $PWD. 
+#   # Print content of `bookmarks.txt` files stored in $HOME and $PWD.
 #   bookmarks
 #
 #   # Add a new URL to `bookmarks.txt` file in $PWD.
@@ -18,13 +18,13 @@ set -o nounset # Treat unset variables as errors.
 
 url=${1:-}
 title=${2:-}
+#dir=${2:-}
 
 if [ -n "$url" ]
 then
-	echo "$url $title" >> bookmarks.txt
+        echo "$url $title" >> bookmarks.txt
 else
-	global="$HOME/bookmarks.txt"
-	local="$PWD/bookmarks.txt"
+        bookmarks_file="$HOME/bookmarks/bookmarks.txt"
 
-	cat "$global" "$local" 2>/dev/null || true
+        cat "$bookmarks_file" 2>/dev/null || true
 fi
