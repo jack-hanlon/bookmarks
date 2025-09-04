@@ -44,10 +44,9 @@ Currently, this fork is setup to be used on WSL with your default brower. Follow
 
 1. Clone this repo into your ~ folder
 2. Add these aliases to your .bashrc file:
-   ```bash
-alias add='~/bookmarks/bin/bookmarks'
+   `alias add='~/bookmarks/bin/bookmarks'
 alias bm='cd ~/bookmarks && ./bin/bookmarks | fzf | cut -d " " -f 1 | xargs -r wslview'
-   ```
+`
 3. Install wslu
 4. Install fzf
 5. Test that it works by typing bm. You should see two example urls
