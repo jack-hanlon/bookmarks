@@ -8,6 +8,29 @@ bookmarks is a concept of keeping bookmarks in plain text files.
 - A "global" bookmarks file is located in the home directory (`$HOME/bookmarks.txt`).
 - "Local" bookmarks files could exist in different directories as well.
 
+## Setup
+
+Currently, this fork is setup to be used on WSL with your default brower. Follow these steps to correctly install this tool:
+
+1. Clone this repo into your ~ folder
+2. Create a `bookmarks.txt` file in /bookmarks and add these lines to it:
+   ```
+   https://dev-docs.educationplannerbc.ca/tech-guide "Dev Docs"
+   https://dev.azure.com/EducationPlannerBC/Main/_sprints/taskboard/Website/Main/Website/ "Current Sprint"
+   ```
+3. Add these aliases to your .bashrc file:
+   ```
+   alias add='~/bookmarks/bin/bookmarks'
+   alias bm='cd ~/bookmarks && ./bin/bookmarks | fzf | cut -d " " -f 1 | xargs -r wslview'
+   ```
+4. Install wslu using sudo apt install
+5. Install fzf sudo apt install
+6. Test that it works by typing `bm`. You should see two example urls
+7. To add a url you can type:
+```
+add https://example.com "Example site"
+```
+
 ## Format
 
 URLs are stored one per line and could be accompanied with optional titles. Titles are separated from URLs with one space character.
@@ -38,28 +61,6 @@ Examples:
 
 The plain text nature of bookmark files allows to use any program to manage URLs. The `bin/` directory of this repository contains `bookmarks` script that could be used to list existing and add new URLs. However nothing should stop you from building your own tools.
 
-## Setup
-
-Currently, this fork is setup to be used on WSL with your default brower. Follow these steps to correctly install this tool:
-
-1. Clone this repo into your ~ folder
-2. Create a `bookmarks.txt` file in /bookmarks and add these lines to it:
-   ```
-   https://dev-docs.educationplannerbc.ca/tech-guide "Dev Docs"
-   https://dev.azure.com/EducationPlannerBC/Main/_sprints/taskboard/Website/Main/Website/ "Current Sprint"
-   ```
-3. Add these aliases to your .bashrc file:
-   ```
-   alias add='~/bookmarks/bin/bookmarks'
-   alias bm='cd ~/bookmarks && ./bin/bookmarks | fzf | cut -d " " -f 1 | xargs -r wslview'
-   ```
-4. Install wslu using sudo apt install
-5. Install fzf sudo apt install
-6. Test that it works by typing `bm`. You should see two example urls
-7. To add a url you can type:
-```
-add https://example.com "Example site"
-```
 
 ## Usage
 
