@@ -43,15 +43,20 @@ The plain text nature of bookmark files allows to use any program to manage URLs
 Currently, this fork is setup to be used on WSL with your default brower. Follow these steps to correctly install this tool:
 
 1. Clone this repo into your ~ folder
-2. Add these aliases to your .bashrc file:
+2. Create an `bookmarks.txt` file in /bookmarks and add these lines to it:
+   ```
+   https://dev-docs.educationplannerbc.ca/tech-guide "Dev Docs"
+   https://dev.azure.com/EducationPlannerBC/Main/_sprints/taskboard/Website/Main/Website/ "Current Sprint"
+   
+3. Add these aliases to your .bashrc file:
    ```
    alias add='~/bookmarks/bin/bookmarks'
    alias bm='cd ~/bookmarks && ./bin/bookmarks | fzf | cut -d " " -f 1 | xargs -r wslview'
    ```
-3. Install wslu using sudo apt install
-4. Install fzf sudo apt install
-5. Test that it works by typing `bm`. You should see two example urls
-6. To add a url you can type:
+4. Install wslu using sudo apt install
+5. Install fzf sudo apt install
+6. Test that it works by typing `bm`. You should see two example urls
+7. To add a url you can type:
 ```
 add https://example.com "Example site"
 ```
