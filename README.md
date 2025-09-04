@@ -50,7 +50,7 @@ Currently, this fork is setup to be used on WSL with your default brower. Follow
    ```
 3. Install wslu using sudo apt install
 4. Install fzf sudo apt install
-5. Test that it works by typing bm. You should see two example urls
+5. Test that it works by typing `bm`. You should see two example urls
 6. To add a url you can type:
 ```
 add https://example.com "Example site"
